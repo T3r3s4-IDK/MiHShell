@@ -2,11 +2,13 @@
 
 ## Features:
 
-* Built-in Commands(such as cd, exit, pwd)
+* Built-in Commands(such as cd, exit, pwd);
 
-* Shell Interpreter
+* Shell Interpreter;
 
-* Add support for signals
+* Add support for signals;
+
+* Add support for piping, background proceses, etc..
 
 ## Bug Fixes:
 
@@ -14,8 +16,8 @@
 
 ## Chores
 
-* Add a README
+* Add a README;
 
-* Organize and better comment code
+* Organize and better comment code;
 
-* Standardize Cases
+* Standardize Cases.
