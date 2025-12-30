@@ -5,11 +5,13 @@
 #include <sched.h>
 #include <signal.h>
 #include <string>
+#include <sys/types.h>
 #include <sys/wait.h>
 #include <unistd.h>
 #include <vector>
 #include "headers/utils.hpp"
 #include "headers/builtin.hpp"
+#include "headers/KillProcess.hpp"
 
 int main(int argc, char *argv[]) {
   std::string input;
@@ -19,6 +21,9 @@ int main(int argc, char *argv[]) {
     std::getline(std::cin, input);
     std::vector<std::string> full_command = split_args(input);
     std::vector<char *> command_char;
+    //Pointer pointing to KillProcess function(for later use in signal())
+    void (*KPPointer)(int);
+    KPPointer = &KillProcess;
     //Check if the vector is empty
     if(full_command.empty()){
         continue;
@@ -62,6 +67,8 @@ int main(int argc, char *argv[]) {
     }
     // Parent Process
     else {
+      ChildPid = command;
+      signal(SIGINT, KPPointer);
       wait(NULL);
     }
     //Deallocate all pointers
@@ -69,8 +76,6 @@ int main(int argc, char *argv[]) {
       delete[] ptr;
     }
     command_char.clear();
-
   }
-
   return 0;
 }

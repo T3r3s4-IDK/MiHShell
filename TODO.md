@@ -2,17 +2,19 @@
 
 ## Features:
 
-* Built-in Commands(such as cd, exit, pwd);
-
-* Shell Interpreter;
+* ~~Built-in Commands(such as cd, exit, pwd)~~;
 
 * Add support for signals;
 
-* Add support for piping, background proceses, etc..
+* Add support for piping, background processes, etc.;
 
-* History
+* History;
 
-* Environment variables
+* Environment variables.
+
+* Support for a .mihshrc
+
+* Support for customization
 
 ## Bug Fixes:
 
@@ -20,8 +22,8 @@
 
 ## Chores
 
-* Add a README;
+* ~~Add a README~~;
 
 * Organize and better comment code;
 
-* Standardize Cases.
+* Standardize cases to Pascal Case.
